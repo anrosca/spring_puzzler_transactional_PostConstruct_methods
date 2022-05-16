@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+  spring-declarative-tx-db:
+    image: postgres:13.3
+    container_name: spring-declarative-tx-db
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: spring-declarative-tx-db
+    ports:
+      - "5432:5432"
